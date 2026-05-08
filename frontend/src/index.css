@@ -1,0 +1,113 @@
+/* ── Wealth Check — Global Styles ─────────────────────────────────────────── */
+
+/* Brand tokens */
+:root {
+  --light-gray:     #F7F7F8;
+  --med-teal:       #39A8AD;
+  --deep-teal:      #00666B;
+  --aqua:           #73FFFF;
+  --dark-teal-blk:  #051B1D;
+  --dark-cyan:      #003339;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  20px;
+
+  --shadow-card: 0 2px 20px rgba(0, 102, 107, 0.09);
+  --shadow-btn:  0 4px 18px rgba(0, 102, 107, 0.32);
+  --shadow-modal:0 24px 64px rgba(5, 27, 29, 0.45);
+
+  --transition: 0.18s ease;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--light-gray);
+  color: var(--dark-cyan);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: var(--light-gray); }
+::-webkit-scrollbar-thumb  { background: var(--med-teal); border-radius: 4px; }
+
+/* Selection */
+::selection {
+  background: var(--aqua);
+  color: var(--dark-teal-blk);
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--med-teal);
+  outline-offset: 2px;
+}
+
+/* Typography scale */
+h1, h2, h3, h4 { font-family: var(--font-display); }
+
+/* Input / Select / Button base */
+input, select, button, textarea {
+  font-family: var(--font-body);
+}
+
+/* Remove number arrows */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
+
+/* ── Animations ───────────────────────────────────────────────────────────── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.fade-up   { animation: fadeUp 0.42s cubic-bezier(.22,.68,0,1.2) both; }
+.fade-up-1 { animation-delay: 0.04s; }
+.fade-up-2 { animation-delay: 0.10s; }
+.fade-up-3 { animation-delay: 0.17s; }
+.fade-up-4 { animation-delay: 0.24s; }
+.fade-up-5 { animation-delay: 0.31s; }
+
+.fade-in   { animation: fadeIn  0.3s ease both; }
+.scale-in  { animation: scaleIn 0.25s cubic-bezier(.22,.68,0,1.2) both; }
+
+/* ── Utility ──────────────────────────────────────────────────────────────── */
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
