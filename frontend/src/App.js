@@ -7,7 +7,8 @@ import {
   XAxis, YAxis, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
 
-const API_URL = 'http://localhost:5001/api';
+const API_URL = 'https://focus-wallet-backend.onrender.com/api';
+console.log('🔥 API_URL is:', API_URL);
 
 const PIE_COLORS = [
   '#73FFFF', '#39A8AD', '#00666B', '#b0f5f0',
